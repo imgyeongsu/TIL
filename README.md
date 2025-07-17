@@ -1,2 +1,45 @@
 # 배운 내용 정리
 - 20250717 git 2일차 / 원격 저장소 제어
+  - **로컬과 원격 연결**
+  ```sh
+  git remote add [name] [remote_repo_url]
+  ```
+  
+  - **추적 금지**  
+  디렉토리에 **.gitignore**생성하고 파일이름 입력 
+
+  - **커밋 취소 revert**
+  ```bash
+  git revert
+  git revert [hash] ([hash]) ([hash])
+  git revert [hash]...[hash]
+  git revert --no-edit [hash]
+  #자동으로 commit 하지 않고, Staging Area에 올림
+  git revert --no-commit [hash]
+  ```
+
+  - **커밋 되돌리기 reset**
+  ```sh
+  git reset [option] [hash]
+  
+  #option
+  --soft # 삭제된 기록을 staging area에 남김
+  --mixed # 삭제된 commit의 기록을 working directory에 남김
+  --hard # 삭제된 commit의 기록을 남기지 않음
+  ```
+
+  - **변경 되돌리기**
+   ```sh
+   git restore [file_name]
+   ```
+
+  - **unstage**  
+  
+    - 기존 커밋이 있는 경우  
+    ```sh
+    git restore --staged [file_name]
+    ```
+    - 기존 커밋이 없는 경우
+     ```sh
+     git rm --cached [file_name]
+     ```
